@@ -1,5 +1,27 @@
 <script>
-
+    export default{
+        data(){
+            return{
+                users: [],
+                username_log: '',
+                password_log: '',
+                successfull: false
+            }
+        },
+        methods: {
+            verify(){
+                let users_back = localStorage.getItem("users"); 
+                if(users_back){
+                    this.users = JSON.parse(this.users)
+                    this.users.forEach( user => {
+                        if(user.username == this.username_log && user.password == password_log){
+                            this.successfull = true;
+                        }
+                    })
+                }
+            }
+        }
+    }
 </script>
 
 <template>
@@ -7,12 +29,16 @@
     <form action="">
         <div>
             <label for="username">Username</label>
-            <input type="text" name="username" id="username">
+            <input type="text" name="username" id="username" v-model="username_log">
             <label for="password">Password</label>
-            <input type="text" name="password" id="password">
-            <button type="submit" class="btn">Login</button>
+            <input type="text" name="password" id="password" v-model="password_log">
+            <button type="submit" class="btn" @click="verify">Login</button>
         </div>
     </form>
+    <div>
+        <p v-if="successfull">Bienvenido</p>
+        <p v-else>Error en el ingreso</p>
+    </div>
 </template>
 
 <style>

@@ -7,7 +7,7 @@ import Register from './components/Register.vue';
 export default {
   data(){
     return {
-      hide: true
+      hide: true,
     }
   },
   methods:{
