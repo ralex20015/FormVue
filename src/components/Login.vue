@@ -5,23 +5,22 @@
                 users: [],
                 username_log: '',
                 password_log: '',
-                successfull: false
+                successfull: true
             }
         },
         methods: {
             verify(){
                 let users_back = localStorage.getItem("users"); 
                 if(users_back){
-                    this.users = JSON.parse(this.users_back)
-                    this.users_back.forEach( user => {
-                        if(user.username == this.username_log && user.password == password_log){
-                            this.successfull = true;
+                    this.users = JSON.parse(users_back)
+                    this.users.forEach(user => {
+                        if(!(user.username == this.username_log && user.password == this.password_log)){
+                            this.successfull = false;
                         }
                     })
                 }
             }
         }
-        
     }
 </script>
 
@@ -37,7 +36,7 @@
         </div>
     </form>
     <div>
-        <p v-if="successfull">Bienvenido</p>
+        <p v-if="successfull"></p>
         <p v-else>Error en el ingreso</p>
     </div>
 </template>
