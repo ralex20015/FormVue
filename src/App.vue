@@ -20,6 +20,12 @@ export default {
     Header,
     Footer,
     Register
+  },
+  created(){
+    this.users = localStorage.getItem("users"); 
+    if(this.users){
+        this.users = JSON.parse(this.users);
+    }
   }
 }
 </script>
