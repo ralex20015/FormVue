@@ -28,8 +28,8 @@ export default {
   <Header />
   <Login v-if="hide"/>
   <Register v-else/>
-  <p v-if="hide">I've an <button @click="toggle">acount</button></p>
-  <p v-else>I don't have an <button @click="toggle">acount</button></p>
+  <p v-if="hide">I don't have an <button @click="toggle">acount</button></p>
+  <p v-else>I've an <button @click="toggle">acount</button></p>
   <Footer />
 </template>
 
