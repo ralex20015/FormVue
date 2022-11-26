@@ -10,11 +10,15 @@
         },
         methods: {
             verify(){
-                this.users.forEach( user => {
-                    if(user.username == this.username_log && user.password == password_log){
-                        this.successfull = true;
-                    }
-                })
+                let users_back = localStorage.getItem("users"); 
+                if(users_back){
+                    this.users = JSON.parse(this.users_back)
+                    this.users_back.forEach( user => {
+                        if(user.username == this.username_log && user.password == password_log){
+                            this.successfull = true;
+                        }
+                    })
+                }
             }
         }
         
