@@ -11,6 +11,7 @@
             <label for="password">Password</label>
             <input type="text" name="password" id="password">
             <button type="submit" class="btn">Login</button>
+            <p>I've an <a href="#">acount</a></p>
         </div>
     </form>
 </template>
@@ -39,6 +40,10 @@ form div{
 
 form div input{
     height: 1.5rem;
+}
+
+form div p{
+    text-align: center;
 }
 
 .btn {
