@@ -2,7 +2,11 @@
 export default{
     data(){
         return{
-            users: []
+            users: [],
+            name: '',
+            username: '',
+            password: '',
+            email: ''
         }
     },
     methods: {
@@ -11,11 +15,16 @@ export default{
                 {
                     name: this.name,
                     username: this.username,
-                    email: this.email,
-                    password: this.password
+                    password: this.password,
+                    email: this.email
+                    
                 }
             );
             localStorage.setItem("users", JSON.stringify(this.users));
+            this.name = ''
+            this.username = ''
+            this.email = ''
+            this.password = ''
         }
     }
 }

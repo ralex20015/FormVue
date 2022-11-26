@@ -12,9 +12,9 @@
             verify(){
                 let users_back = localStorage.getItem("users"); 
                 if(users_back){
-                    this.users = JSON.parse(this.users)
-                    this.users.forEach( user => {
-                        if(user.username == this.username_log && user.password == password_log){
+                    this.users = JSON.parse(users_back)
+                    this.users.forEach(user => {
+                        if(user.username == this.username_log && user.password == this.password_log){
                             this.successfull = true;
                         }
                     })
