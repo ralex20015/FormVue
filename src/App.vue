@@ -1,16 +1,39 @@
-<script setup>
+<script>
 import Login from './components/Login.vue';
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import Register from './components/Register.vue';
+
+export default {
+  data(){
+    return {
+      hide: true
+    }
+  },
+  methods:{
+      toggle(){
+        this.hide = !this.hide;
+      }
+  }
+  ,components: {
+    Login,
+    Header,
+    Footer,
+    Register
+  }
+}
 </script>
 
 <template>
   <Header />
-  <Login />
+  <Login v-if="hide"/>
+  <Register v-else/>
+  <p>I've an <button @click="toggle">acount</button></p>
   <Footer />
 </template>
 
 <style>
-
+p{
+  text-align: center;
+}
 </style>

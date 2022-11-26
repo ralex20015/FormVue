@@ -11,7 +11,6 @@
             <label for="password">Password</label>
             <input type="text" name="password" id="password">
             <button type="submit" class="btn">Login</button>
-            <p>I've an <a href="#">acount</a></p>
         </div>
     </form>
 </template>
